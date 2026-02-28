@@ -33,15 +33,15 @@ LifeOps OS uses a highly modular and extensible architecture, making it simple t
 
 ```mermaid
 graph TD;
-    User([👤 User]) -->|Interacts via| CLI[🖥️ CLI Interface];
-    CLI --> Core[⚙️ Decision Synthesis Engine];
-    Core <-->|Context Retrieval| VectorDB[(🐘 PostgreSQL + pgvector)];
-    Core -->|Delegates to| Agents[🤖 Specialized Agents];
-    Agents --> Career[💼 Career Agent];
-    Agents --> Finance[💰 Financial Agent];
-    Agents --> Health[🩺 Health Agent];
+    User(["👤 User"]) -->|Interacts via| CLI["🖥️ CLI Interface"];
+    CLI --> Core["⚙️ Decision Synthesis Engine"];
+    Core <-->|Context Retrieval| VectorDB[("🐘 PostgreSQL + pgvector")];
+    Core -->|Delegates to| Agents["🤖 Specialized Agents"];
+    Agents --> Career["💼 Career Agent"];
+    Agents --> Finance["💰 Financial Agent"];
+    Agents --> Health["🩺 Health Agent"];
     Agents --> Core[Synthesizes Results];
-    Core --> LLM[🧠 LLM Provider (OpenAI/Gemini)];
+    Core --> LLM["🧠 LLM Provider (OpenAI/Gemini)"];
     LLM --> Core;
     Core -->|Final Output| User;
 ```
